@@ -7,40 +7,77 @@
         <link rel="stylesheet" href="CS2701-Week4-Registration.css">
     </head>
     <body>
-        <header></header>
+        <header>
+            <h1>Fresh Food For All</h1>
+            <p>Connect with your community. Grow, share and enjoy fresh produce.</p>
+        </header>
         <nav>
             <!-- ToDo: An unordered list to represent the menu, 
                        each list item should correspond to the menu items (Home, Register, Login, Help)
                        The css class of the menu is "navlist"
                        Check lecture slides about lists, an example of a more basic menu, and CSS class selector-->
             <ul class="navlist">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#registration">Register</a></li>
+                 <li><a href="#login">Login</a></li>
+                  <li><a href="#help">Help</a></li>
             </ul>
          </nav>
         <main>
             <!-- Check Week 4 Lecture to learn about HTML5 semantic elements-->
-            <aside>
+            <aside id="help">
+                 <h2>Why Join Us?</h2>
+    <p>Support local growers and discover fresh, locally grown produce.</p>
+    <ul>
+        <li>Connect with allotment owners</li>
+        <li>Share your home-grown produce</li>
+        <li>Support your local community</li>
+    </ul>
             </aside>
             <section>
-                <form class="center" novalidate>
-                <!-- ToDo: Implement the form containing 
-                           Name - type text
-                           email- type text
-                           password - type text
-                           Terms of Service - type checkbox
-                           Register - button
-                           Learn more - link
-                           Check lecture slides and the links on the slides to learn about forms
-                           and how to create a button that would react to a click Event
-                        -->
-                    <!-- Example given for user type checkboxes-->
-                    
-                    <input type="checkbox" id="buyer" name="buyer" value="buyer">
-                    <label for="buyer">I want to buy produce directly from allotment owners.</label><br>
-                    <input type="checkbox" id="seller" name="seller" value="seller">
-                    <label for="seller">I want to sell produce from my allotment.</label><br><br>
+                <form class="center" id="register" novalidate>
+    <h2>Create Your Account</h2>
+    <p>Join our community of local growers and fresh food lovers.</p>
 
-                    <br><br>
-                </form>
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name"
+           placeholder="Enter your full name" required>
+
+    <label for="email">Email Address</label>
+    <input type="text" id="email" name="email"
+           placeholder="Enter your email address" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password"
+           placeholder="Create a password" required>
+
+    <fieldset>
+        <legend>How would you like to participate?</legend>
+
+        <input type="checkbox" id="buyer" name="buyer" value="buyer">
+        <label for="buyer">
+            I want to buy produce directly from allotment owners.
+        </label>
+
+        <input type="checkbox" id="seller" name="seller" value="seller">
+        <label for="seller">
+            I want to sell produce from my allotment.
+        </label>
+    </fieldset>
+
+    <div class="terms">
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">
+            I agree to the Terms of Service.
+        </label>
+    </div>
+
+    <button type="button" onclick="document.getElementById('hiddenParagraph').textContent = 'Thank you for your interest in Fresh Food For All!';">
+        Register
+    </button>
+
+    <p>Want to know more? <a href="#help">Learn more</a></p>
+</form>
                 <div class="center" id="hiddenSection">
                     <p id="hiddenParagraph"></p>
                 </div>
