@@ -1,26 +1,31 @@
-body{
+
+/* General page styling */
+body {
     font-family: "Lato", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
     max-width: 75rem;
     margin: auto;
-    height: 100vh;
+    min-height: 100vh;
 }
 
-header{
-    background-image:url(SharingFood.jpg);
+/* Header styling */
+header {
+    background-image: url(SharingFood.jpg);
     background-repeat: repeat;
     background-size: contain;
     background-position: center;
-    height:200px;
+    height: 200px;
     width: 100%;
     margin: auto;
 }
 
-/**** Menu Style *****************************************/
+/* Navigation menu styling */
 nav {
     border-bottom: 1px solid black;
 }
 
-ul.navlist{
+ul.navlist {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -28,8 +33,7 @@ ul.navlist{
     background-color: #333;
 }
 
-ul.navlist li
-{
+ul.navlist li {
     float: left;
     display: inline;
 }
@@ -46,8 +50,17 @@ ul.navlist li a:hover {
     background-color: #111;
 }
 
-/**** Styling for main part */
+/* Accessibility: visible keyboard focus */
+a:focus-visible,
+input:focus-visible,
+button:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #0066cc;
+    outline-offset: 3px;
+}
 
+/* Main page layout */
 main {
     display: flex;
     flex-direction: row;
@@ -59,55 +72,94 @@ main {
     height: auto;
 }
 
-section, aside {
+section,
+aside {
     padding: 0.5rem;
     box-sizing: border-box;
     min-height: 100%;
 }
 
+/* Sidebar styling */
 aside {
     width: 25%;
     min-width: 180px;
     background-color: #deded8;
 }
 
+/* Main content section */
 section {
     min-width: 350px;
     width: 75%;
 }
 
-/*Styling for search in aside*/
-.search{
+/* Search styling */
+.search {
     display: block;
     width: auto;
     text-align: left;
 }
 
+/* Centre content */
 .center {
     margin: auto;
     width: 50%;
     border: 3px solid green;
     padding: 10px;
-  }
+}
 
-/* Styling for text inputs in the form*/
+/* Text input styling */
 .textInput {
     display: block;
     width: auto;
     text-align: left;
 }
 
-/*Styling with a media query*/
+/* Accessibility: consistent form controls */
+input,
+button,
+select,
+textarea {
+    font: inherit;
+    max-width: 100%;
+}
+
+.textInput {
+    min-height: 40px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+/* Button styling */
+button {
+    min-height: 40px;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+/* Accessibility: larger checkbox targets */
+input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+/* Mobile responsive layout */
 @media screen and (max-width: 700px) {
-    main{
+    main {
         flex-direction: column;
     }
-    
+
     aside {
-        min-width: 100%;
+        width: 100%;
+        min-width: 0;
     }
 
-    #hiddenSection{
+    section {
+        width: 100%;
+        min-width: 0;
+    }
+
+    #hiddenSection {
         overflow-wrap: break-word;
     }
 }
